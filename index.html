@@ -1,0 +1,26 @@
+<style>
+  body{ 
+  background-color: hsl(325, 93%, 93%); 
+  color: hsl(335, 97%, 33%); 
+  font-size: 50px; 
+  line-height: 50px; 
+  word-wrap: anywhere; 
+  }
+</style>
+
+<body></body>
+
+<script> 
+  for (let i= 0;i<1000;i++) {
+    if (0 < Math.random()< 0.25) {
+      document.body.innerText += '♣'
+    } else if (0.25 < Math.random() < 0.5){
+      document.body.innerText += '♥'
+    } else if (0.5 < Math.random() < 0.75){
+      document.body.innerText += '♠'
+    } else if (Math.random() > 0.75){
+      document.body.innerText += '♦'
+    }
+  }
+    
+</script>
