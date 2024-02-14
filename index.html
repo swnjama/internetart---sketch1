@@ -6,8 +6,12 @@
   line-height: 50px; 
   word-wrap: anywhere; 
   }
+  
   .club {
-   background-color: hsl(201, 100%, 93%); 
+   color: hsl(115, 99%, 26%); 
+  }
+  .heart{
+  color: hsl(335, 97%, 33%);
   }
 </style>
 
@@ -20,20 +24,17 @@
     if (0.01 < Math.random()< 0.25) {
       cardSymbol = '♣';
       cardClass = 'club';
-      document.body.innerText += '♣'
     } else if (0.25 < Math.random() < 0.5){
       cardSymbol = '♥';
       cardClass = 'heart';
-      document.body.innerText += '♥'
     } else if (0.5 < Math.random() < 0.75){
       cardSymbol = '♠';
       cardClass = 'spade';
-      document.body.innerText += '♠'
     } else if (Math.random() > 0.75){
       cardSymbol = '♦';
       cardClass = 'diamond';
-      document.body.innerText += '♦'
     }
+      document.body.innerHTML += `<span class="${cardClass}">${cardSymbol}</span>`;
   }
     
 </script>
