@@ -3,6 +3,26 @@
   font-size: 50px; 
   line-height: 50px; 
   word-wrap: anywhere; 
+    overflow: hidden;
+    width: 100vw;
+
+  }
+  
+    .card {
+    position: absolute;
+    opacity: 0; /* Initially hidden */
+    animation: pop-up 1s ease-out forwards;
+  }
+
+  @keyframes pop-up {
+    0% {
+      opacity: 0;
+      transform: translate(100%, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
   }
   
   .club {
@@ -45,7 +65,23 @@
       cardSymbol = '♦';
       cardClass = 'diamond';
     }
-      document.body.innerHTML += `<span class="${cardClass}">${cardSymbol}</span>`;
+      
+    const container = document.createElement('div');
+container.style.position = 'absolute';
+container.style.transform = `translate(${Math.random() * 100}vw, ${Math.random() * 100}vh)`;
+
+const span = document.createElement('span');
+span.className = `card ${cardClass}`;
+span.textContent = cardSymbol;
+
+
+span.style.animationDelay = `${i * 0.1}s`;
+
+container.appendChild(span);
+
+
+document.body.appendChild(container);
+
   }
     
 </script>
