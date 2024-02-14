@@ -1,16 +1,17 @@
 <style>
-  body{ 
-  font-size: 50px; 
-  line-height: 50px; 
-  word-wrap: anywhere; 
+  body {
+    font-size: 50px;
+    line-height: 50px;
+    word-wrap: anywhere;
     overflow: hidden;
     width: 100vw;
 
   }
-  
-    .card {
+
+  .card {
     position: absolute;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
+    /* Initially hidden */
     animation: pop-up 1s ease-out forwards;
   }
 
@@ -19,69 +20,72 @@
       opacity: 0;
       transform: translate(100%, 0);
     }
+
     100% {
       opacity: 1;
       transform: translate(0, 0);
     }
   }
-  
+
   .club {
-  color: hsl(115, 99%, 26%);
-  background-color: hsl(131, 100%, 93%);
+    color: hsl(115, 99%, 26%);
+    background-color: hsl(131, 100%, 93%);
 
   }
-  .heart{
-  color: hsl(335, 97%, 33%);
-  background-color: hsl(325, 93%, 93%); 
+
+  .heart {
+    color: hsl(335, 97%, 33%);
+    background-color: hsl(325, 93%, 93%);
 
   }
-  .spade{
-  color: hsl(250, 97%, 33%);
-  background-color : hsl(206, 92%, 90%);
- 
+
+  .spade {
+    color: hsl(250, 97%, 33%);
+    background-color: hsl(206, 92%, 90%);
+
   }
-  .diamond{
-  color: hsl(54, 99%, 55%);
-  background-color: hsl(54, 99%, 92%);
+
+  .diamond {
+    color: hsl(54, 99%, 55%);
+    background-color: hsl(54, 99%, 92%);
   }
 </style>
 
 <body></body>
 
-<script> 
-  for (let i= 0;i<2000;i++) {
+<script>
+  for (let i = 0; i < 2000; i++) {
     let cardSymbol = '';
     let cardClass = '';
-    if (0.01 < Math.random()< 0.3) {
+    if (0.01 < Math.random() < 0.3) {
       cardSymbol = '♣';
       cardClass = 'club';
-    } else if (0.3 < Math.random() < 0.6){
+    } else if (0.3 < Math.random() < 0.6) {
       cardSymbol = '♥';
       cardClass = 'heart';
-    } else if (0.6 < Math.random() < 0.75){
+    } else if (0.6 < Math.random() < 0.75) {
       cardSymbol = '♠';
       cardClass = 'spade';
-    } else if (Math.random() > 0.75){
+    } else if (Math.random() > 0.75) {
       cardSymbol = '♦';
       cardClass = 'diamond';
     }
-      
+
     const container = document.createElement('div');
-container.style.position = 'absolute';
-container.style.transform = `translate(${Math.random() * 100}vw, ${Math.random() * 100}vh)`;
+    container.style.position = 'absolute';
+    container.style.transform = `translate(${Math.random() * 100}vw, ${Math.random() * 100}vh)`;
 
-const span = document.createElement('span');
-span.className = `card ${cardClass}`;
-span.textContent = cardSymbol;
-
-
-span.style.animationDelay = `${i * 0.1}s`;
-
-container.appendChild(span);
+    const span = document.createElement('span');
+    span.className = `card ${cardClass}`;
+    span.textContent = cardSymbol;
 
 
-document.body.appendChild(container);
+    span.style.animationDelay = `${i * 0.1}s`;
+
+    container.appendChild(span);
+
+
+    document.body.appendChild(container);
 
   }
-    
 </script>
