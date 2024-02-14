@@ -1,33 +1,44 @@
 <style>
   body{ 
-  background-color: hsl(325, 93%, 93%); 
-  color: hsl(335, 97%, 33%); 
   font-size: 50px; 
   line-height: 50px; 
   word-wrap: anywhere; 
   }
   
   .club {
-   color: hsl(115, 99%, 26%); 
+  color: hsl(115, 99%, 26%);
+  background-color: hsl(131, 100%, 93%);
+
   }
   .heart{
   color: hsl(335, 97%, 33%);
+  background-color: hsl(325, 93%, 93%); 
+
+  }
+  .spade{
+  color: hsl(250, 97%, 33%);
+  background-color : hsl(206, 92%, 90%);
+ 
+  }
+  .diamond{
+  color: hsl(54, 99%, 55%);
+  background-color: hsl(54, 99%, 92%);
   }
 </style>
 
 <body></body>
 
 <script> 
-  for (let i= 0;i<1000;i++) {
+  for (let i= 0;i<2000;i++) {
     let cardSymbol = '';
     let cardClass = '';
-    if (0.01 < Math.random()< 0.25) {
+    if (0.01 < Math.random()< 0.3) {
       cardSymbol = '♣';
       cardClass = 'club';
-    } else if (0.25 < Math.random() < 0.5){
+    } else if (0.3 < Math.random() < 0.6){
       cardSymbol = '♥';
       cardClass = 'heart';
-    } else if (0.5 < Math.random() < 0.75){
+    } else if (0.6 < Math.random() < 0.75){
       cardSymbol = '♠';
       cardClass = 'spade';
     } else if (Math.random() > 0.75){
